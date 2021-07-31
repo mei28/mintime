@@ -1,5 +1,5 @@
 /* Google Fonts を読み込む */
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 
 /* 全体を囲うコンテナ */
 .container {
@@ -10,11 +10,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  height: 1.2;
 }
 
 /* 時計の共通スタイル */
 .clock {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   color: #c6c8d1;
   text-align: center;
 }
@@ -31,14 +32,14 @@
 
 /* 時計の時間スタイル */
 .clock-time {
-  font-size: 132px;
+  font-size: 196px;
 }
 
 @media screen and (max-width: 500px){
   .clock-date{
-    font-size: 5vw;
+    font-size: 16vw;
   }
   .clock-time{
-    font-size: 20vw;
+    font-size: 24vw;
   }
 }

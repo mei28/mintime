@@ -6,6 +6,7 @@ const clock = () => {
   let year = d.getFullYear();
   let month = d.getMonth();
   let date = d.getDate();
+  let weekNum = getWeeksNum(year, month);
   let youbiNum = d.getDay();
   const youbis = ["SUN","MON","TUE","WED","THU","FRI","SAT"]
   const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Sep"]
@@ -25,7 +26,7 @@ const clock = () => {
   // 表示文字列の作成
 
   // let today = `${year}/${month}/${date} ${youbi}`;
-  let today = `${month} ${date}, ${year}, ${youbi}`;
+  let today = `${month} ${date} (${youbi}), ${year}, week ${weekNum}`;
   let time = `${hour}:${min}:${sec}`;
 
   // 表示文字列を出力
@@ -35,3 +36,11 @@ const clock = () => {
 
 // 1000ms=1secごとにclock関数を呼ぶ
 setInterval(clock, 1000);
+
+function getWeeksNum(year, month){
+  var daysNum = 32 - new Date(year, month, 32).getDate();
+  var fDay0 = new Date(year, month, 1).getDay();
+  var fDay = fDay0 ? (fDay0 - 1) : 6;
+  var weeksNum = Math.ceil((daysNum + fDay) / 7);
+  return weeksNum;
+}
